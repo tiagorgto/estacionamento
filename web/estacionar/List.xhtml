@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <h:head>
+        <title>TED Parker!</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+
+    <h:body>
+        <div id="container">
+
+
+
+            <div id="header">
+              <h:link outcome="/index" value="#{bundle.ViewClienteIndexLink}"/>  |  <h:link outcome="/cliente/Create" value="Cadastrar Motoristas"/>  |  <h:link outcome="/veiculo/Create" value="Cadastrar Motos"/>  |  <h:link outcome="/estacionar/List" value="Estacionar"/>
+            </div>
+
+            <div id="content">
+
+                <ui:composition template="/template.xhtml">
+                    <ui:define name="title">
+                        <h:outputText value="#{bundle.ListEstacionarTitle}"></h:outputText>
+                    </ui:define>
+
+                    <ui:define name="body">
+                        <h:form styleClass="jsfcrud_list_form">
+
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+
+                            <h:outputText escape="false" value="#{bundle.ListEstacionarEmpty}" rendered="#{estacionarController.items.rowCount == 0}"/>
+
+                            <h:panelGroup rendered="#{estacionarController.items.rowCount > 0}">
+                                <h:outputText value="#{estacionarController.pagination.pageFirstItem + 1}..#{estacionarController.pagination.pageLastItem + 1}/#{estacionarController.pagination.itemsCount}"/>&nbsp;
+                                <h:commandLink action="#{estacionarController.previous}" value="#{bundle.Previous} #{estacionarController.pagination.pageSize}" rendered="#{estacionarController.pagination.hasPreviousPage}"/>&nbsp;
+                                <h:commandLink action="#{estacionarController.next}" value="#{bundle.Next} #{estacionarController.pagination.pageSize}" rendered="#{estacionarController.pagination.hasNextPage}"/>&nbsp;
+                                <h:dataTable value="#{estacionarController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                                    <h:column>
+
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListEstacionarTitle_dia}"/>
+                                        </f:facet>
+
+                                        <h:outputText value="#{item.dia}">
+                                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                                        </h:outputText>
+
+                                    </h:column>
+
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListEstacionarTitle_hora_entrada}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.hora_entrada}">
+                                            <f:convertDateTime pattern="HH:mm" />
+                                        </h:outputText>
+                                    </h:column>
+
+
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListEstacionarTitle_hora_saida}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.hora_saida}">
+                                            <f:convertDateTime pattern="HH:mm" />
+                                        </h:outputText>
+                                    </h:column>
+
+
+                                    //mudei id
+                                    <!--<h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListEstacionarTitle_id}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.id}"/>
+                                    </h:column>-->
+
+
+                                    //Adicionei PLACA
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <!--<h:outputText value="#{bundle.ListEstacionarTitle_veiculo}"/>-->
+                                            <h:outputText value="Placa"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.placa}"/>
+                                    </h:column>
+
+
+
+                                    //Mudei de veiculo para modelo
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListEstacionarTitle_veiculo}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.modelo}"/>
+                                    </h:column>
+
+
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListEstacionarTitle_cliente}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.nome}"/>
+                                    </h:column>
+
+
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="&nbsp;"/>
+                                        </f:facet>
+                                        <h:commandLink action="#{estacionarController.prepareView}" value="#{bundle.ListEstacionarViewLink}"/>
+                                        <h:outputText value=" "/>
+                                        <h:commandLink action="#{estacionarController.prepareEdit}" value="#{bundle.ListEstacionarEditLink}"/>
+                                        <h:outputText value=" "/>
+                                        <h:commandLink action="#{estacionarController.destroy}" value="#{bundle.ListEstacionarDestroyLink}"/>
+                                    </h:column>
+                                </h:dataTable>
+                            </h:panelGroup>
+                            <br />
+                            <h:commandLink action="#{estacionarController.prepareCreate}" value="#{bundle.ListEstacionarCreateLink}"/>
+                            <br />
+                            <br />
+
+                        </h:form>
+                    </ui:define>
+                </ui:composition>
+
+
+            </div>
+
+
+
+            <div id="footer">
+                Todos os direitos Reservados®
+            </div>
+        </div>
+
+
+    </h:body>
+
+
+</html>

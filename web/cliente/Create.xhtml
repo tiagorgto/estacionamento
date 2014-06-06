@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TED Parker!</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+
+
+    <h:body>
+        <!--<ui:composition template="/template.xhtml">        </ui:composition>
+        <ui:composition></ui:composition>-->
+        <div id="container">
+
+
+
+            <div id="header">
+                <h:link outcome="/index" value="#{bundle.ViewClienteIndexLink}"/>  |  <h:link outcome="/cliente/Create" value="Cadastrar Motoristas"/>  |  <h:link outcome="/veiculo/Create" value="Cadastrar Motos"/>  |  <h:link outcome="/estacionar/List" value="Estacionar"/>
+            </div>
+
+            <div id="content">
+                <ui:composition template="/template.xhtml">
+                    <ui:define name="title">
+                        <h:outputText value="#{bundle.CreateClienteTitle}"></h:outputText>
+                    </ui:define>
+                    <ui:define name="body">
+                        <h:panelGroup id="messagePanel" layout="block">
+                            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" />
+                        </h:panelGroup>
+                        <h:form>
+                            <h:panelGrid columns="2">
+
+                                <h:outputLabel value="#{bundle.CreateClienteLabel_nome}" for="nome" />
+                                <h:inputText id="nome" value="#{clienteController.selected.nome}" title="#{bundle.CreateClienteTitle_nome}" validatorMessage="Campo Nome Necessário" >
+                                             <f:validateLength minimum="3" ></f:validateLength> </h:inputText>
+                                <h:outputLabel value="#{bundle.CreateClienteLabel_RG}" for="RG" />
+                                <h:inputText id="RG" value="#{clienteController.selected.RG}" title="#{bundle.CreateClienteTitle_RG}" maxlength="9" validatorMessage="Campo RG Necessário" > 
+                                             <f:validateLength minimum="3" ></f:validateLength>  </h:inputText>
+
+
+
+
+                                  <!-- <h:outputLabel value="#{bundle.CreateClienteLabel_id}" for="id" />
+                                <h:inputText id="id" value="#{clienteController.selected.id}" title="#{bundle.CreateClienteTitle_id}" />-->
+                            </h:panelGrid>
+                            <br />
+                            <h:commandLink action="#{clienteController.create}" value="#{bundle.CreateClienteSaveLink}" />
+                            <br />
+                            <br />
+                            <h:commandLink action="#{clienteController.prepareList}" value="#{bundle.CreateClienteShowAllLink}" immediate="true"/>
+
+                        </h:form>
+                    </ui:define>
+                </ui:composition>
+            </div>
+
+
+
+
+
+
+            <div id="footer">
+                Todos os direitos Reservados®
+            </div>
+        </div>
+
+
+    </h:body>
+
+
+
+
+
+</html>

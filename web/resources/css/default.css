@@ -1,0 +1,143 @@
+root { 
+    display: block;
+}
+
+#container{
+    width: 800px;
+    font-family: Arial;
+    color: #000;
+    position: absolute;
+}
+
+
+#header{
+    background-color:#6495ED;
+    padding: 25px 0px 0px 15px;
+    height: 40px;
+    float: top;
+    text-align: center;
+    font-size: 18px;
+}
+
+a:link{
+    text-decoration: none;
+    color: #000099;
+}
+
+a:active{
+    text-decoration: none;
+    color: #000099;
+}
+
+a:visited{
+    a:visited; text-decoration: none;
+    color: #000099;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #000099;
+}
+
+/*#menu{
+    background-color:#E8E8E8;
+    height:500px;
+    width:280px;
+    float:left;
+    padding-left: 20px;
+    clear: both;
+}*/
+
+#content{
+    background-color:#E0FFFF;
+    height:500px;
+    width: 790px;
+    padding: 10px 0px 0px 10px;
+    background-color:#F00FFF;
+    background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));  
+}
+
+#footer{
+    background-color:#6495ED;
+    clear:both;
+    text-align:center;
+    height: 20px;
+}
+
+body{
+    height: 620px  ;
+    background-color:#F5DEB3;
+    background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));   
+}
+
+a {
+    color: #FF0000;
+}
+
+table {
+    empty-cells: show;
+}
+
+form.jsfcrud_list_form th, td th {
+    font-size: x-small;
+    color: #fff;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #fff;
+    letter-spacing: 3px;
+    text-align: left;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: #060;
+}
+
+td {
+    vertical-align: top;
+    padding-bottom: 8px;
+    font-size: small;
+}
+
+form.jsfcrud_list_form td, td td {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #fff;
+    vertical-align: baseline;
+    padding-bottom: 0px;
+}
+
+tr.jsfcrud_odd_row {
+    background-color: #fef;
+    color: #555;
+}
+
+
+tr.jsfcrud_even_row {
+    background-color: #999;
+    color: #4e6a71;
+}
+
+#busyImage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TED Parker!</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+
+    <h:body>
+        <div id="container">
+
+
+
+            <div id="header">
+               <h:link outcome="/index" value="#{bundle.ViewClienteIndexLink}"/>  |  <h:link outcome="/cliente/Create" value="Cadastrar Motoristas"/>  |  <h:link outcome="/veiculo/Create" value="Cadastrar Motos"/>  |  <h:link outcome="/estacionar/List" value="Estacionar"/>
+            </div>
+
+            <div id="content">
+
+                <ui:composition template="/template.xhtml">
+                    <ui:define name="title">
+                        <h:outputText value="#{bundle.ViewVeiculoTitle}"></h:outputText>
+                    </ui:define>
+                    <ui:define name="body">
+                        <h:panelGroup id="messagePanel" layout="block">
+                            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                        </h:panelGroup>
+                        <h:form>
+                            <h:panelGrid columns="2">
+                                <h:outputText value="#{bundle.ViewVeiculoLabel_placa}"/>
+                                <h:outputText value="#{veiculoController.selected.placa}" title="#{bundle.ViewVeiculoTitle_placa}"/>
+                                <h:outputText value="#{bundle.ViewVeiculoLabel_modelo}"/>
+                                <h:outputText value="#{veiculoController.selected.modelo}" title="#{bundle.ViewVeiculoTitle_modelo}"/>
+                                <h:outputText value="#{bundle.ViewVeiculoLabel_cor}"/>
+                                <h:outputText value="#{veiculoController.selected.cor}" title="#{bundle.ViewVeiculoTitle_cor}"/>
+                                <h:outputText value="#{bundle.ViewVeiculoLabel_ano}"/>
+                                <h:outputText value="#{veiculoController.selected.ano}" title="#{bundle.ViewVeiculoTitle_ano}"/>
+                                <h:outputText value="#{bundle.ViewVeiculoLabel_id}"/>
+                                <h:outputText value="#{veiculoController.selected.id}" title="#{bundle.ViewVeiculoTitle_id}"/>
+                            </h:panelGrid>
+                            <br />
+                            <h:commandLink action="#{veiculoController.destroyAndView}" value="#{bundle.ViewVeiculoDestroyLink}"/>
+                            <br />
+                            <br />
+                            <h:link outcome="Edit" value="#{bundle.ViewVeiculoEditLink}"/>
+                            <br />
+                            <h:commandLink action="#{veiculoController.prepareCreate}" value="#{bundle.ViewVeiculoCreateLink}" />
+                            <br />
+                            <h:commandLink action="#{veiculoController.prepareList}" value="#{bundle.ViewVeiculoShowAllLink}"/>
+                            <br />
+                            <br />
+
+                        </h:form>
+                    </ui:define>
+                </ui:composition>
+            </div>
+            <div id="footer">
+                Todos os direitos Reservados®
+            </div>
+        </div>
+
+
+    </h:body>
+
+
+
+</html>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>TED Parker!</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <div id="container">
+
+
+
+            <div id="header">
+               <h:link outcome="/index" value="#{bundle.ViewClienteIndexLink}"/>  |  <h:link outcome="/cliente/Create" value="Cadastrar Motoristas"/>  |  <h:link outcome="/veiculo/Create" value="Cadastrar Motos"/>  |  <h:link outcome="/estacionar/List" value="Estacionar"/>
+            </div>
+
+            <div id="content">
+
+                <ui:composition template="/template.xhtml">
+                    <ui:define name="title">
+                        <h:outputText value="#{bundle.ViewEstacionarTitle}"></h:outputText>
+                    </ui:define>
+                    <ui:define name="body">
+                        <h:panelGroup id="messagePanel" layout="block">
+                            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                        </h:panelGroup>
+                        <h:form>
+                            <h:panelGrid columns="2">
+
+                                <h:outputText value="#{bundle.ViewEstacionarLabel_dia}"/>
+                                <h:outputText value="#{estacionarController.selected.dia}" title="#{bundle.ViewEstacionarTitle_dia}">
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />    
+                                </h:outputText>
+
+
+                                <h:outputText value="#{bundle.ViewEstacionarLabel_hora_entrada}"/>
+                                <h:outputText value="#{estacionarController.selected.hora_entrada}" title="#{bundle.ViewEstacionarTitle_hora_entrada}">
+                                    <f:convertDateTime pattern="HH:mm" />
+                                </h:outputText>
+
+
+                                <h:outputText value="#{bundle.ViewEstacionarLabel_hora_saida}"/>
+                                <h:outputText value="#{estacionarController.selected.hora_saida}" title="#{bundle.ViewEstacionarTitle_hora_saida}">
+                                    <f:convertDateTime pattern="HH:mm" />
+                                </h:outputText>
+
+
+                                <h:outputText value="#{bundle.ViewEstacionarLabel_id}"/>
+                                <h:outputText value="#{estacionarController.selected.id}" title="#{bundle.ViewEstacionarTitle_id}"/>
+                                <h:outputText value="#{bundle.ViewEstacionarLabel_veiculo}"/>
+                                <h:outputText value="#{estacionarController.selected.veiculo}" title="#{bundle.ViewEstacionarTitle_veiculo}"/>
+                                <h:outputText value="#{bundle.ViewEstacionarLabel_cliente}"/>
+                                <h:outputText value="#{estacionarController.selected.cliente}" title="#{bundle.ViewEstacionarTitle_cliente}"/>
+
+                            </h:panelGrid>
+
+
+
+                            <br />
+                            <h:commandLink action="#{estacionarController.destroyAndView}" value="#{bundle.ViewEstacionarDestroyLink}"/>
+                            <br />
+                            <br />
+                            <h:link outcome="Edit" value="#{bundle.ViewEstacionarEditLink}"/>
+                            <br />
+                            <h:commandLink action="#{estacionarController.prepareCreate}" value="#{bundle.ViewEstacionarCreateLink}" />
+                            <br />
+                            <h:commandLink action="#{estacionarController.prepareList}" value="#{bundle.ViewEstacionarShowAllLink}"/>
+                            <br />
+                            <br />
+
+
+                        </h:form>
+                    </ui:define>
+                </ui:composition>
+
+
+
+
+            </div>
+            <div id="footer">
+                Todos os direitos Reservados®
+            </div>
+        </div>
+
+
+    </h:body>
+
+
+
+
+</html>

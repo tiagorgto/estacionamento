@@ -1,0 +1,148 @@
+root { 
+    display: block;
+     
+}
+
+body{
+    height: 200px;
+    background-color:#FFFEFF;
+    /*background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.2));   */
+    
+}
+
+#container{
+    width: 800px;
+    font-family: Arial;
+    color: #000;
+    position: absolute;
+    margin: 10px;
+    font-size: 14px;
+    left:50%;
+    margin-left:-400px;
+    
+}
+
+
+#header{
+    background-color:#3366FF;
+    padding: 10px 0px 0px 15px;
+    height: 35px;
+    float: top;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+
+#content{
+    background-color:#E0FFFF;
+    height:600px;
+    width: 790px;
+    padding: 10px 0px 0px 10px;
+    background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));  
+}
+
+#footer{
+    background-color: #3366FF ;
+    clear:both;
+    text-align:center;
+    padding: 15px 0px 0px 15px;
+    height: 30px;
+}
+
+
+
+a  {
+    font-size: 18px;
+}
+
+a:link{
+    text-decoration: none;
+    color: #000099;
+}
+
+a:active{
+    text-decoration: none;
+    color: #FFFF00;
+    font-size: 24px;
+}
+
+a:visited{
+    a:visited; text-decoration: none;
+    color: #000099;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #FFF;
+}
+
+
+
+table {
+    empty-cells: show;
+}
+
+form.jsfcrud_list_form th, td th {
+    font-size: x-small;
+    color: #fff;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #fff;
+    letter-spacing: 3px;
+    text-align: left;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: cornflowerblue;
+}
+
+td {
+    vertical-align: top;
+    padding-bottom: 8px;
+    font-size: small;
+}
+
+form.jsfcrud_list_form td, td td {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #fff;
+    vertical-align: baseline;
+    padding-bottom: 0px;
+}
+
+tr.jsfcrud_odd_row {
+    background-color: #fef;
+    color: #555;
+}
+
+
+tr.jsfcrud_even_row {
+    background-color: #999;
+    color: #4e6a71;
+}
+
+#busyImage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
